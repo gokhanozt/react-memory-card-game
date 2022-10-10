@@ -2,9 +2,9 @@
 
 Demo: [https://polite-phoenix-ea411a.netlify.app/](https://polite-phoenix-ea411a.netlify.app/)
 
-![alt text](../screenshots/ss-dark2.png)
+![Dark Mode Screenshot](https://github.com/gokhanozt/react-memory-card-game/blob/main/screenshots/ss-dark.png?raw=true)
 
-![alt text](../screenshots/ss-light.png)
+![Light Mode Screenshot](https://github.com/gokhanozt/react-memory-card-game/blob/main/screenshots/ss-dark.png?raw=true)
 
 # Getting Started with Create React App
 
