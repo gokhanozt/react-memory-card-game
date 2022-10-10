@@ -1,0 +1,11 @@
+.row {
+  display: grid;
+  grid-template-columns: 152px 152px 152px;
+  grid-gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 31% 31% 31%;
+  }
+}

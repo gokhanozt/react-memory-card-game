@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Turret+Road&display=swap");
+@import "./colors.scss";
+@import "./components/Grid/Grid.scss";
+@import "./components/Card/Card.scss";
+
+body {
+  font-family: "Turret Road", cursive;
+  transition: color 0.2s ease-in;
+  margin: 0;
+  text-align: center;
+  padding: 0px 50px 20px;
+  color: $almost-black;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin: 0;
+  text-shadow: 0 2px 4px $text-shadow;
+  padding-bottom: 10px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid $black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  user-select: none;
+  font-family: "Turret Road", cursive;
+  &:first-child {
+    margin-right: 20px;
+  }
+  &:hover {
+    border-color: $lighter-dark-blue;
+    color: $lighter-dark-blue;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 1200px;
+  overflow: hidden;
+}
+.second-player {
+  margin-top: 10px;
+}
+.your-turn {
+  color: $red;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    width: 0;
+    padding-left: 10px;
+    height: 0;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid $red;
+    border-top: 7px solid transparent;
+    clear: both;
+  }
+}
+
+.scores {
+  margin-bottom: 10px;
+}
+
+.score-board {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    border-radius: 2px;
+    background: linear-gradient(130deg, $ligh-blue, $pink 41.07%, $cyan 76.05%);
+  }
+}
+
+.player-scores {
+  padding-bottom: 10px;
+}
+
+//for smaller screens adjustment
+@media (max-width: 768px) {
+  .btn:first-child {
+    margin-right: 10px !important;
+  }
+}

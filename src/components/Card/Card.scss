@@ -1,0 +1,118 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.card {
+  position: relative;
+  border-radius: 4px;
+  background: $card-dark-bg;
+  padding: 3px;
+  cursor: pointer;
+  margin: 1px;
+  &:before {
+    content: "";
+    width: 102%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      $ligh-blue,
+      $dark-blue 43%,
+      $dark-purple
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -1%;
+    right: -1%;
+    animation: spin 2.5s linear infinite;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    top: 25px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background-image: linear-gradient(
+      var(--rotate),
+      $ligh-blue,
+      $dark-blue 43%,
+      $dark-purple
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+  &:hover {
+    background-color: $lighter-dark-blue !important;
+    transition: color 1s;
+    &:before,
+    &:after {
+      animation: none;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+.img {
+  height: 150px;
+  width: 144px;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center;
+  transform: rotateY(180deg) perspective(150px);
+  transition: 0.4s;
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+
+.card-show {
+  &::after {
+    transform: rotateY(180deg) perspective(100px);
+  }
+
+  .img {
+    transform: rotateY(0) perspective(100px);
+  }
+}
+
+.card-finished {
+  opacity: 0.5;
+}
+
+.card-img {
+  width: 100%;
+}
+
+//for smaller screens adjustment
+
+@media only screen and (min-width: 1224px) and (max-height: 920px) {
+  .img {
+    height: 120px;
+    width: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .img {
+    height: 75px;
+    width: 60px;
+  }
+}
